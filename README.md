@@ -8,7 +8,8 @@
      C++
 
 ## How to execute: 
-     make 
+     g++ main.cpp
+     ./a.out
 
 ## Member Parts
      Molita: 
