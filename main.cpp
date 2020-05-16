@@ -28,9 +28,39 @@ public:
 	bool isFree;
 };
 
-void readFile(string input_file, vector<process> &process_list)
+void readFile(string input_file, vector<process> &list)
 {
+  ifstream myfile;
+	my_file.open(input_file);
 
+  int numOfProcess;
+  process temp;
+
+  myfile >> numOfProcess;
+
+  int i = 0;
+  while (i < numOfProcess)
+  {
+    myfile >> temp.num;
+		myfile >> temp.start_T;
+		myfile >> temp.end_T;
+		myfile >> temp.numBlocks;
+
+    vector<int> tempBsize;
+    int block;
+
+    int j =0;
+    while(i < temp.numBlocks)
+    {
+      myfile >> block;
+      tempBsize.push_back(block);
+      j++;
+    }
+    temp.blockSizes = tempBsize;
+    list.push_back(temp);
+    i++;
+  }
+  myfile.close();
 }
 
 int main()
@@ -44,7 +74,7 @@ int main()
 	cout<< "ENTER Page Size (1:100, 2:200, 3:400): ";
 	cin>> pageSize;
 	pageSize *= 100;
-	
+
   if (pageSize == 300)
     pageSize += 100;
 
