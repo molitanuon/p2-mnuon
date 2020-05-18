@@ -1,1 +1,40 @@
 
+class process
+{
+public:
+	int num;
+	int start_T;
+	int end_T;
+	int numBlocks;
+	vector<int> blockSizes;
+};
+
+class memBlock
+{
+public:
+	int startBlock;
+	int endBlock;
+	int processNum;
+	int pageNum;
+	bool isFree;
+};
+
+void createMap
+{
+    use a loop to create the map
+}
+
+bool added
+{
+    add to the map 
+    check if it is free
+}
+
+readFile(string, vector<process> &list)
+{
+  open the file 
+  get all the variables
+  save them into the classes
+  close file
+}
+
