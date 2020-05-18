@@ -31,7 +31,7 @@ public:
 void readFile(string input_file, vector<process> &list)
 {
   ifstream myfile;
-	my_file.open(input_file);
+	myfile.open(input_file);
 
   int numOfProcess;
   process temp;
@@ -81,9 +81,10 @@ int main()
 	vector<process> list;
 	vector<int> timeline;
 
-	readInFile("in1.txt", process_list);
-	findTimes(process_list, timeline);
-	printOutput(process_list, timeline, memSize, pageSize);
+	readFile("in1.txt", list);
+
+	cout << "t = 0 : Process 1 arrives"<< endl;
+	cout << "       Input Queue:[1]" << endl;
 
 	return 0;
 }
